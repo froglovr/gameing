@@ -1,0 +1,2 @@
+# gameing
+when u gm
