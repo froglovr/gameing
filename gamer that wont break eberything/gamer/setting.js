@@ -1,4 +1,5 @@
 function setting() {
+  homunculus = new theBOY(500, 750)
   background (0, 0, 0);
   fill(255, 255, 255);
   push();
@@ -23,5 +24,5 @@ function setting() {
     rect (410, 630, 50, 5);
     rect (540, 630, 50, 5);
   }
-  theBOY(500, 750);
+  homunculus.Draw(500, 750);
 }

@@ -3,9 +3,8 @@ var optionMenu = 3;
 var optionSetting = 3;
 var buffer = 0;
 var boy = 1;
-var boyX = 250;
+var boyX = 500;
 var boyY = 500;
-var kiLL = 1;
 var wait = 0;
 function setup() {
   createCanvas(1000, 1000);
@@ -88,19 +87,19 @@ function keyPressed() {
   }
   if ( 2 <= gaming && gaming <= 6) { //levels 1-5
     if (keyCode === UP_ARROW) {
-      boyY = boyY - 40;
+      levelOne.children[0].y = levelOne.children[0].y - 40;
     } 
     if (keyCode === DOWN_ARROW) {
-      boyY = boyY + 40;
+      levelOne.children[0].y = levelOne.children[0].y + 40;
     } 
     if (keyCode === LEFT_ARROW) {
-      boyX = boyX - 40;
+      levelOne.children[0].x = levelOne.children[0].x - 40;
     } 
     if (keyCode === RIGHT_ARROW) {
-      boyX = boyX + 40;
+      levelOne.children[0].x = levelOne.children[0].x + 40;
     } 
     if (keyCode === 32 && wait >= 1) {
-      kiLL = 2;
+      levelOne.children[0].kiLL = 2;
       wait = 0;
     } 
     wait++;
@@ -108,10 +107,10 @@ function keyPressed() {
       kiLL = 1;
     }
   }
-  if (gaming == 2) { //treeeees change later for more levels weith tre
-    for (i = 0; i < levelOne.children.length; i+=Math.ceil(random(4, 10))) {
-      print(levelOne.children[i].treeColor +' tree coler');
-      levelOne.children[i].treeWogle();
+  if (gaming == 2) { //treeeees change inequality later for more levels weith tre
+    wigglers = levelOne.children.filter (i => i.treeWogle);
+    for (i = 0; i < wigglers.length; i+=Math.ceil(random(4, 10))){
+      wigglers[i].treeWogle();
     }
   }
 }

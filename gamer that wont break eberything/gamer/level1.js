@@ -1,23 +1,20 @@
 class level1 {
   constructor() { 
     this.children = [];
-    let counter = 0;
+    this.children.push(new theBOY(500, 500));
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 9; j++) {
-        this.children[counter] = new treeMoment(7+50*i, 7+50*j);
-        counter++;
+        this.children.push(new treeMoment(7+50*i, 7+50*j));
       }
     }
     for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 3; j++) {
-        this.children[counter] = new treeMoment(207+50*i, 7+50*j);
-        counter++;
+        this.children.push(new treeMoment(207+50*i, 7+50*j));
       }
     }
     for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 7; j++) {
-        this.children[counter] = new treeMoment(673+50*i, 7+50*j);
-        counter++;
+        this.children.push(new treeMoment(673+50*i, 7+50*j));
       }
     }
   }
@@ -30,10 +27,8 @@ class level1 {
     rect (0, 580, 125, 420);
     rect (0, 0, 200, 450);
     for (let i = 0; i < this.children.length; i++) {
-      this.children[i].treeDraw();
+      this.children[i].Draw();
     }
-
-    theBOY(boyX, boyY);
   }
 }
 class treeMoment {
@@ -43,7 +38,7 @@ class treeMoment {
     this.treeColor = random (0, 175);
     this.frame = 0;
   }
-  treeDraw() {
+  Draw() {
     fill (147, 115, 92);
     rect (this.x, this.y, 20, 40);
     triangle (this.x-10, this.y+40, this.x+30, this.y+40, this.x+10, this.y+20);
