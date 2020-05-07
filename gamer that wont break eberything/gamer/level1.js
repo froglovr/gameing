@@ -1,31 +1,43 @@
 class level1 {
-  constructor() { 
+  constructor() {
     this.children = [];
-    this.children.push(new theBOY(500, 500));
+    let singleBOY = new theBOY(entryX, entryY);
+    this.children.push(singleBOY);
+    this.children.push(new enime(300, 300, 2));
     for (let i = 0; i < 4; i++) {
       for (let j = 0; j < 9; j++) {
-        this.children.push(new treeMoment(7+50*i, 7+50*j));
+        this.children.push(new treeMoment(7 + 50 * i, 7 + 50 * j));
       }
     }
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 9; i++) {
       for (let j = 0; j < 3; j++) {
-        this.children.push(new treeMoment(207+50*i, 7+50*j));
+        this.children.push(new treeMoment(207 + 50 * i, 7 + 50 * j));
       }
     }
     for (let i = 0; i < 7; i++) {
       for (let j = 0; j < 7; j++) {
-        this.children.push(new treeMoment(673+50*i, 7+50*j));
+        this.children.push(new treeMoment(673 + 50 * i, 7 + 50 * j));
+      }
+    }
+    for (let i = 0; i < 3; i++) {
+      for (let j = 0; j < 9; j++) {
+        this.children.push(new treeMoment(7 + 50 * i, 600 + 50 * j));
+      }
+    }
+    for (let i = 0; i < 4; i++) {
+      for (let j = 0; j < 11; j++) {
+        this.children.push(new treeMoment(823 + 50 * i, 520 + 50 * j));
       }
     }
   }
-  level1Draw() {
+  Draw() {
     background(216, 187, 147);
-    fill (128, 187, 147);
-    rect (0, 0, 550, 150);
-    rect (650, 0, 350, 350);
-    rect (800, 500, 200, 500);
-    rect (0, 580, 125, 420);
-    rect (0, 0, 200, 450);
+    fill(128, 187, 147);
+    rect(0, 0, 1000, 150);
+    rect(650, 0, 350, 350);
+    rect(800, 500, 200, 500);
+    rect(0, 580, 150, 420);
+    rect(0, 0, 200, 450);
     for (let i = 0; i < this.children.length; i++) {
       this.children[i].Draw();
     }
@@ -35,37 +47,13 @@ class treeMoment {
   constructor(x, y) {
     this.x = x;
     this.y = y;
-    this.treeColor = random (0, 175);
-    this.frame = 0;
+    this.treeColor = random(0, 175);
   }
   Draw() {
-    fill (147, 115, 92);
-    rect (this.x, this.y, 20, 40);
-    triangle (this.x-10, this.y+40, this.x+30, this.y+40, this.x+10, this.y+20);
-    fill (0, 255-this.treeColor, 0);
-    circle (this.x+10, this.y-10, 60);
-  }
-  treeWogle() {
-    this.frame++; 
-    fill(0, 255-this.treeColor, 0);
-    if (this.frame > 3) {
-      this.frame = 0;
-    }
-    if (this.frame == 0) {
-      print('frame 0');
-      circle (this.x+10, this.y-10, 60);
-    }
-    if (this.frame == 1) {
-      print('frame 1');
-      circle (this.x+12, this.y-10, 60);
-    }
-    if (this.frame == 2) {
-      print('frame 2');
-      circle (this.x+15, this.y-10, 60);
-    }
-    if (this.frame == 3) {
-      print('frame 3');
-      circle (this.x+12, this.y-10, 60);
-    }
+    fill(147, 115, 92);
+    rect(this.x, this.y, 20, 40);
+    triangle(this.x - 10, this.y + 40, this.x + 30, this.y + 40, this.x + 10, this.y + 20);
+    fill(0, 255 - this.treeColor, 0);
+    circle(this.x + 10, this.y - 10, 60);
   }
 }
