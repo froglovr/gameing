@@ -82,8 +82,6 @@ class theBOY {
     if (boy == 3) { //blue
       fill(124, 124, 124); //haft
       rect(x, y + 16, 55, 3);
-      fill(255, 0, 0);
-      circle(x+78, y+18, 20)
       fill(211, 211, 211); //point
       triangle(x + 88, y + 18, x + 50, y + 25, x + 50, y + 10);
      

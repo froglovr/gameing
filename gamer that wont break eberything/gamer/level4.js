@@ -3,42 +3,44 @@ class level4 {
         this.collision = true;
         this.children = [];
         this.children.push(new theBOY(entryX, entryY));
-        this.children.push(new enime(600, 600, 2));
-        this.children.push(new enime(400, 700, 2));
-        for (let i = 0; i < 21; i++) {
+        this.children.push(new enime(400, 330, 2));
+        this.children.push(new enime(750, 500, 2));
+        for (let i = 0; i < 10; i++) {
             for (let j = 0; j < 3; j++) {
                 this.children.push(new stoneMoment(50 * i - 18, 50 * j - 10));
             }
         }
-        for (let i = 0; i < 2; i++) {
-            for (let j = 0; j < 4; j++) {
-                this.children.push(new stoneMoment(580 + 50 * i, 340 + 50 * j));
+        for (let i = 0; i < 7; i++) {
+            for (let j = 0; j < 3; j++) {
+                this.children.push(new stoneMoment(655 + 50 * i,50 * j - 10 ));
+            }
+        }
+        for (let i = 0; i < 6; i++) {
+            for (let j = 0; j < 6; j++) {
+                this.children.push(new stoneMoment(50 * i - 18, 150 + 50 * j - 10));
             }
         }
         for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 17; j++) {
+            for (let j = 0; j < 10; j++) {
                 this.children.push(new stoneMoment(845 + 50 * i, 145 + 50 * j));
             }
         }
         for (let i = 0; i < 3; i++) {
-            for (let j = 0; j < 15; j++) {
-                this.children.push(new stoneMoment(50 * i - 18, 300 + 50 * j));
-            }
-        }
-        for (let i = 0; i < 14; i++) {
-            for (let j = 0; j < 3; j++) {
-                this.children.push(new stoneMoment(130 + 50 * i, 850 + 50 * j));
+            for (let j = 0; j < 4; j++) {
+                this.children.push(new stoneMoment(50 * i - 26, 440 + 50 * j));
             }
         }
     }
     Draw() {
-        background(198, 171, 114);
-        fill(107, 91, 63);
-        rect(0, 0, 1000, 150);
-        rect(850, 0, 150, 1000);
-        rect(0, 850, 1000, 150);
-        rect(0, 300, 155, 700);
-        rect(585, 345, 120, 205);
+        background(255,224,171);
+        fill(218,185,132);
+        rect(0, 0, 500, 155);
+        rect(850, 0, 150, 661);
+        rect(0, 300, 155, 375);
+        rect(0, 0, 310, 465)
+        rect(655, 0, 400, 155);
+        fill(54, 72, 175);
+        rect(0, 661, 1000, 400)
         for (let i = 0; i < this.children.length; i++) {
             this.children[i].Draw();
         }
@@ -51,10 +53,39 @@ class stoneMoment {
         this.treeColor = random(80, 155);
     }
     Draw() {
-        fill(27, 50, 39);
-        rect(this.x, this.y, 20, 40);
-        triangle(this.x - 10, this.y + 40, this.x + 30, this.y + 40, this.x + 10, this.y + 20);
-        fill(255 - this.treeColor, 92, 62);
-        circle(this.x + 10, this.y - 10, 60);
+        fill(255, 213, 125);
+        beginShape();
+        vertex(this.x+9, this.y+17);
+        vertex(this.x+24, this.y+8);
+        vertex(this.x+53, this.y+9);
+        vertex(this.x+58, this.y+12);
+        vertex(this.x+22, this.y+22);
+        endShape(CLOSE);
+        fill(255, 201, 119);
+        beginShape();
+        vertex(this.x+22, this.y+22);
+        vertex(this.x+58, this.y+12);
+        vertex(this.x+70, this.y+38);
+        vertex(this.x+66, this.y+54);
+        vertex(this.x+46, this.y+56);
+        vertex(this.x+36, this.y+49);
+        endShape(CLOSE);
+        fill(241, 187, 101);
+        beginShape();
+        vertex(this.x+9, this.y+17);
+        vertex(this.x+22, this.y+22);
+        vertex(this.x+36, this.y+49);
+        vertex(this.x+14, this.y+50);
+        vertex(this.x+6, this.y+31);
+        endShape(CLOSE);
+        fill(200, 138, 64);
+        beginShape();
+        vertex(this.x+14, this.y+50);
+        vertex(this.x+36, this.y+49);
+        vertex(this.x+46, this.y+56);
+        endShape(CLOSE);
+        fill(146, 91, 35);
+        beginShape();
+        endShape();
     }
 }

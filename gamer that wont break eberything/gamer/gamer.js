@@ -50,7 +50,7 @@ function draw() {
   if (gaming == 2) {
     levels[0].Draw();
     if (levels[0].children[0].y > 1000) { //to level 4 from 1
-      levels[3].children[0].x = 500;
+      levels[3].children[0].x = 580;
       levels[3].children[0].y = 40;
       gaming = 5;
     }
@@ -81,16 +81,16 @@ function draw() {
   }
   if (gaming == 4) {
     levels[2].Draw();
-    if (levels[2].children[0].y > 1000) { //to level 5 from 3 fajd;flkasdjf;alsdkfj;aldj
-      levels[4].children[0].x = 500;
+    if (levels[2].children[0].y > 1000) { //to level 5 from 3
+      levels[4].children[0].x = 620;
       levels[4].children[0].y = 40;
       gaming = 6;
     }
   }
   if (gaming == 6) {
     levels[4].Draw();
-    if (levels[4].children[0].y < 0) { //to level 3 from 5 asdkfjhadslkjfhasdlkhfakljdf
-      levels[2].children[0].x = 500;
+    if (levels[4].children[0].y < 0) { //to level 3 from 5
+      levels[2].children[0].x = 400;
       levels[2].children[0].y = 960;
       gaming = 4;
     }

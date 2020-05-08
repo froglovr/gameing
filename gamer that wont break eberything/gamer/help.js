@@ -31,18 +31,3 @@ function help() {
     zomby.Draw(770, 740, 2);
     sletleton.Draw(830, 740, 1);
 }
-
-/* 
-------------------------------------------------------------------------------------
-create relic so it can go in its spot on help                                      |
-make the boy able to turn around                                                   |
-draw gray and red attack animations                                                |
-make level 3 able to be entered (level 3 is the door room with dead trees)         |
-draw level 4 (ocean level with rocks)                                              |
-collision                                                                          |
-draw key item                                                                      |
-hotbar hp counter and key counter                                                  |
-perhaps add variety to da rocks?                                                   |
-when door opens center rectangle gets darker                                       |
-------------------------------------------------------------------------------------
-*/
